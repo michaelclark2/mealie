@@ -115,7 +115,7 @@ class GroupMealplanController(BaseCrudController):
 
     @router.get("/today")
     def get_todays_meals(self):
-        return self.repo.get_today()
+        return self.repo.get_today(use_server_time=True)
 
     @router.post("/random", response_model=ReadPlanEntry)
     def create_random_meal(self, data: CreateRandomEntry):
